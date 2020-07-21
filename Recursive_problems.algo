@@ -1,0 +1,32 @@
+FUNCTION Palindrome( T : ARRAY_OF STRING[n],i,j ) : BOOLEAN
+VAR
+    
+    Result:BOOLEAN;
+BEGIN
+    
+    Result := true;
+   
+        IF (i<=j) THEN
+             IF (T[i]=T[j]) THEN
+                 Palindrome(T,i+1,j-1)
+             ELSE
+                 Result := FALSE;
+                 break;
+             END_IF   
+        END_IF
+   
+    RETURN Result ;
+END
+ALGORITHM Main_palindrom
+VAR
+    i,j: INTEGER;
+
+BEGIN
+    i:=1
+    j:=n        
+    IF(Palindrome(T,i,j) THEN 
+        Write('is palindrom')
+    ELSE
+        Write('is not  palindrom')
+    END_IF   
+END
